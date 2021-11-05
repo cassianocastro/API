@@ -1,0 +1,19 @@
+{
+    "name": "cass/api",
+    "description": "Rest API",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Models\\"      : "src/model/",
+            "Creational\\"  : "src/model/creational/",
+            "Entities\\"    : "src/model/entities/",
+            "Tables\\"      : "src/model/dao/",
+            "Service\\"     : "src/service/",
+            "Controllers\\" : "src/controller/",
+            "Views\\"       : "src/view/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {}
+}
