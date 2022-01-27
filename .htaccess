@@ -1,6 +1,3 @@
-#set main file as index
-DirectoryIndex index.php
-
 <Files ~ "^\.ht">
     Require all denied
 </Files>
@@ -9,16 +6,25 @@ DirectoryIndex index.php
     Require all denied
 </Files>
 
+<FilesMatch "\.(ico)$">
+	Require all granted
+</FilesMatch>
+
+#set main file as index
+DirectoryIndex index.php
+
 # enable apache rewrite engine
 RewriteEngine on
 
 # set your rewrite base
 # Edit this in your init method too if you script lives in a subfolder
-RewriteBase /myProjects/API/API
 #RewriteBase /
 
 # Deliver the folder or file directly if it exists on the server
+#RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !(\.ico)
+
+
 # Push every request to index.php
 RewriteRule ^(.*)$ index.php [QSA]
