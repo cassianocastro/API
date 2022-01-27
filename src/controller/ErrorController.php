@@ -1,15 +1,13 @@
-<?php 
-declare(strict_types = 1);
+<?php
+declare(strict_types=1);
 
 namespace Controllers;
 
-use Models\Response;
-use Views\{
-    JSONDocument, Renderer
-};
+use Models\Helpers\Response;
+use Views\{ JSONDocument, Renderer };
 
 /**
- * 
+ *
  */
 final class ErrorController implements namespace\InterfacePageController
 {
@@ -22,5 +20,3 @@ final class ErrorController implements namespace\InterfacePageController
     }
 
 }
-
-?>
