@@ -1,0 +1,21 @@
+section > table, th {
+	border: medium solid black;
+}
+
+section > tr, td {
+	border: thin solid black;
+}
+
+section > table {
+	text-align: center;
+	margin: 0 auto;
+
+	height: 200px;
+	width: 60%;
+}
+
+caption {
+	color: purple;
+	font-size: x-large;
+	font-weight: bold;
+}
