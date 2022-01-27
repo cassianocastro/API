@@ -1,20 +1,20 @@
-<?php 
-declare(strict_types = 1);
+<?php
+declare(strict_types=1);
 
 namespace Views;
 
 /**
- * 
+ *
  */
 final class HTMLDocument implements namespace\IDocument
 {
-    
+
     private string $path;
     private mixed $params;
 
     public function __construct(string $path, mixed $params = null)
     {
-        $this->path   = __DIR__ . $path;
+        $this->path   = __DIR__ . "/../public/$path";
         $this->params = $params;
     }
 
@@ -26,8 +26,7 @@ final class HTMLDocument implements namespace\IDocument
         }
         $content = ob_get_contents();
         ob_end_clean();
+
         return $content;
     }
 }
-
-?>
