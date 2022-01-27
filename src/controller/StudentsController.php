@@ -1,99 +1,90 @@
-<?php 
-declare(strict_types = 1);
+<?php
+declare(strict_types=1);
 
 namespace Controllers;
 
-use Exception;
-use Entities\Student, Tables\StudentTable;
 use Models\{
-    JSONParser, Response, Status
+	Entities\Student,
+	Helpers\Response,
+	Helpers\InputReader,
+	Tables\StudentTable
 };
-use Views\JSONDocument;
-use Views\Renderer;
+use Views\{ JSONDocument, Renderer };
 
 /**
- * 
+ *
  */
 final class StudentsController
 {
 
-    public function showStudentsAction(?int $id = null): void
+	private function getAll(): void
+	{
+		$result = (new StudentTable())->getAll();
+
+		if ( ! empty($result) )
+			$json = (new Response(200, $result))->toJSON();
+		else
+			$json = (new Response(200, "No registers."))->toJSON();
+
+		(new Renderer())->render(new JSONDocument($json));
+	}
+
+	private function getByID(array $data): void
+	{
+		$id     = intval($data[1]);
+		$result = (new StudentTable())->findByID($id);
+
+		if ( ! empty($result) )
+			$json = (new Response(200, $result))->toJSON();
+		else
+			$json = (new Response(200, "Student not found."))->toJSON();
+
+		(new Renderer())->render(new JSONDocument($json));
+	}
+
+    public function get(?array $data = null): void
     {
-        try {
-            if ( is_null($id) ) {
-                $result = (new StudentTable())->getAll();
-                if ( ! empty($result) )
-                    $json = (new Response(200, $result))->toJSON();    
-                else
-                    $json = (new Response(200, "Sem registros."))->toJSON();
-                
-            } else {
-                $result = (new StudentTable())->findByID($id);
-                if ( ! empty($result) )
-                    $json = (new Response(200, $result))->toJSON();    
-                else
-                    $json = (new Response(200, "Student not found."))->toJSON();
-            }
-            (new Renderer())->render(new JSONDocument($json));
-        } catch(Exception $e) {
-            print $e->getMessage();
-        }
+		if ( is_null($data) or empty($data) )
+			$this->getAll();
+		else
+			$this->getByID($data);
     }
 
-    public function insertStudentAction(): void
+    public function post(): void
     {
-        $student     = new Student("Daniela", 43);
-        $wasInserted = (new StudentTable())->insert($student);
+		$data        = (new InputReader())->getData();
+        $wasInserted = (new StudentTable())->insert(new Student(...$data));
 
-        if ( $wasInserted ) {
-            $array = array(
-                "status"  => (new Status())->getMessageFromCode(201),
-                "message" => "Registro inserido."
-            );
-        } else {
-            $array = array(
-                "status"  => (new Status())->getMessageFromCode(400),
-                "message" => "Não foi possível inserir o registro."
-            );
-        }
-        print (new JSONParser())->encodeToJSON($array);
+        if ( $wasInserted )
+			$json = (new Response(201, "Register inserted."))->toJSON();
+        else
+			$json = (new Response(400, "Couldn't insert the register."))->toJSON();
+
+        (new Renderer())->render(new JSONDocument($json));
     }
 
-    public function updateStudentAction(?int $id = null): void
+    public function put(): void
     {
-        $student    = new Student("Ariobaldo", 21, 23);
-        $wasUpdated = (new StudentTable())->update($student);
+		$data       = (new InputReader())->getData();
+        $wasUpdated = (new StudentTable())->update(new Student(...$data));
 
         if ( $wasUpdated )
-            $array = array(
-                "status"  => (new Status())->getMessageFromCode(200),
-                "message" => "Aluno atualizado."
-            );
+			$json = (new Response(200, "Register updated."))->toJSON();
         else
-            $array = array(
-                "status"  => (new Status())->getMessageFromCode(400),
-                "message" => "ID inexistente/URL incorreta."
-            );
-        print (new JSONParser())->encodeToJSON($array);
+			$json = (new Response(400, "Inexistent ID/Incorrect URL."))->toJSON();
+
+		(new Renderer())->render(new JSONDocument($json));
     }
 
-    public function deleteStudentAction(?int $id = null): void
+    public function delete(): void
     {
-        $student    = new Student("Victor", 16, $id);
-        $wasRemoved = ((new StudentTable())->delete($student));
+        $wasRemoved = ((new StudentTable())->delete(new Student("Victor", 16, $id)));
 
         if ( $wasRemoved )
-            $array = array(
-                "status"  => (new Status())->getMessageFromCode(200),
-                "message" => "Registro removido!"
-            );
+			$json = (new Response(200, "Register removed."))->toJSON();
         else
-            $array = array(
-                "status"  => (new Status())->getMessageFromCode(400),
-                "message" => "ID inexistente/URL incorreta.",
-            );
-        print (new JSONParser())->encodeToJSON($array);
+			$json = (new Response(400, "Inexistent ID/Incorrect URL."))->toJSON();
+
+		(new Renderer())->render(new JSONDocument($json));
     }
 }
-
-?>
