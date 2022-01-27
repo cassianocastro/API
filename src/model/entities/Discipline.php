@@ -1,14 +1,14 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
-namespace Entities;
+namespace Models\Entities;
 
 /**
- * 
+ *
  */
 final class Discipline
 {
-    
+
     use EntityTrait;
 
     public function __construct(int $id)
@@ -17,5 +17,3 @@ final class Discipline
     }
 
 }
-
-?>

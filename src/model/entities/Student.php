@@ -1,15 +1,16 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
-namespace Entities;
+namespace Models\Entities;
 
 /**
- * 
+ *
  */
 final class Student
 {
-    
+
     use EntityTrait;
+
     private string $name;
     private int $age;
 
@@ -30,5 +31,3 @@ final class Student
         return $this->age;
     }
 }
-
-?>
