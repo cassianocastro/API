@@ -1,33 +1,31 @@
-<?php 
-declare(strict_types = 1);
+<?php
+declare(strict_types=1);
 
 namespace Controllers;
 
 /**
- * 
+ *
  */
 final class DisciplinesController
 {
 
-    public function showDisciplinesAction(): void
+    public function get(): void
     {
-        
+
     }
 
-    public function insertDisciplineAction(): void
-    {
-        # code...
-    }
-
-    public function updateDisciplineAction(): void
+    public function post(): void
     {
         # code...
     }
 
-    public function deleteDisciplineAction(): void
+    public function put(): void
+    {
+        # code...
+    }
+
+    public function delete(): void
     {
         # code...
     }
 }
-
-?>
