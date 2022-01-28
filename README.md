@@ -1,7 +1,6 @@
-<div style="align: center">
-	<img src="src/public/res/favicons/favicon.ico" alt="API Logo">
-	<h1>Students API</h1>
-</div>
+
+# Students API
+
 
 ## Requisites
 
