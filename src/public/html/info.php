@@ -4,18 +4,19 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>API | Server Info</title>
-	<link rel="icon" type="image/x-icon" size="24x24" href="src/view/res/api.png">
-	<!-- <link rel="stylesheet" type="text/css" href="src/public/css/reset.css"> -->
-	<link rel="stylesheet" type="text/css" href="src/public/css/header.css">
+
+  <link rel="icon" type="image/x-icon" size="24x24" href="src/public/favicons/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="src/public/css/table.css">
-	<link rel="stylesheet" type="text/css" href="src/public/css/footer.css">
+
+  <title>API | Server Info</title>
 </head>
 <body>
 	<?php include_once __DIR__ . '/includes/header.inc'; ?>
 	<main>
+
 		<section>
 			<h2>Server</h2>
+
 			<table border="1">
 				<caption>Server Info</caption>
 				<thead>
@@ -33,7 +34,9 @@
 					<?php endforeach; ?>
 				</tbody>
 			</table>
+
 		</section>
+
 	</main>
 	<?php include_once __DIR__ . '/includes/footer.inc'; ?>
 </body>

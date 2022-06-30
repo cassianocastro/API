@@ -4,18 +4,20 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>API | Home</title>
-	<link rel="icon" type="image/x-icon" size="24x24" href="src/view/res/favicons/favicon.ico">
-	<!-- <link rel="stylesheet" type="text/css" href="src/public/css/reset.css"> -->
-	<link rel="stylesheet" type="text/css" href="src/public/css/header.css">
+
+  <link rel="icon" type="image/x-icon" size="24x24" href="src/public/favicons/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="src/public/css/table.css">
-	<link rel="stylesheet" type="text/css" href="src/public/css/footer.css">
+  <link rel="manifest" href="./manifest.json">
+
+  <title>API | Home</title>
 </head>
 <body>
 	<?php include_once __DIR__ . '/includes/header.inc'; ?>
 	<main>
+
 			<section>
 				<h2>Routes</h2>
+
 				<table>
 					<caption>Index</caption>
 					<thead>
@@ -75,7 +77,9 @@
 						</tr>
 					</tfoot>
 				</table>
+
 			</section>
+
 	</main>
 	<?php include_once __DIR__ . '/includes/footer.inc'; ?>
 </body>

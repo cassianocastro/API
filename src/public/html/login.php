@@ -4,8 +4,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>API | Login</title>
-	<link rel="icon" type="image/x-icon" size="24x24" href="src/view/res/api.png">
+
+  <link rel="icon" type="image/x-icon" size="24x24" href="src/public/favicons/favicon.ico">
+
+  <title>API | Login</title>
 </head>
 <body>
 	<?php include_once __DIR__ . '/includes/header.inc'; ?>
