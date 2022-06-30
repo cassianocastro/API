@@ -3,22 +3,20 @@ root = true
 [*]
 charset                  = utf-8
 end_of_line              = lf
-indent_style             = tab
+indent_style             = space
+indent_size              = 4
+#tab_width               = 4
 insert_final_newline     = false
 trim_trailing_whitespace = true
 
-[*.{yml,yaml}]
-indent_style = space
-indent_size  = 4
+[*.{xml,html,yaml}]
+indent_size  = 2
+#tab_width  = 2
 
-[*.{php,inc,htaccess,json,js,css,less}]
-indent_size = 4
-#tab_width  = 4
-
-[*.html]
+[src/public/html/includes/*.inc]
 indent_size = 2
 #tab_width  = 2
 
-[src/public/html/**.php]
+[src/public/html/*.php]
 indent_size = 2
 #tab_width  = 2

@@ -1,6 +1,4 @@
-
 # Students API
-
 
 ## Requisites
 

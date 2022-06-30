@@ -1,9 +1,10 @@
 ---
 dbconfig:
-    driver: mysql
-    host: localhost
-    port: 3306
-    database: t308
-    user: modifier
-    password: modifier
+  driver: mysql
+  host: localhost
+  port: 3306
+  charset: utf8
+  database: t308
+  user: modifier
+  password: modifier
 ...

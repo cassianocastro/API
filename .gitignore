@@ -1,3 +1,2 @@
-.vscode/
 vendor/
-src/lib/foo
+src/.lib/der/*.chc
