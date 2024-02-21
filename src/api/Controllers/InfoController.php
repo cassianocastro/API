@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Api\Controllers;
 
-use Api\Http\{ Request, Response, Status, Server };
+use Api\Http\{ Request, Response, Server };
 use Api\Views\HTMLDocument;
 
 /**
@@ -16,9 +16,6 @@ final class InfoController implements Controller
     {
         $info = (new Server())->getAll();
 
-        return new Response(
-            new Status(200),
-            new HTMLDocument("info.php", $info)
-        );
+        return new Response(200, new HTMLDocument("info.php", $info));
     }
 }

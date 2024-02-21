@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Api\Controllers;
 
-use Api\Http\{ Request, Response, Status };
+use Api\Http\{ Request, Response };
 use Api\Models\Helpers\JSONParser;
 use Api\Views\JSONDocument;
 
@@ -17,6 +17,6 @@ final class ErrorController implements Controller
     {
         $json = (new JSONParser())->encodeToJSON("Verify the typed URL.");
 
-        return new Response(new Status(404), new JSONDocument($json));
+        return new Response(404, new JSONDocument($json));
     }
 }
