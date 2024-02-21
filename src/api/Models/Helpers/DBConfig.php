@@ -9,31 +9,29 @@ namespace Api\Models\Helpers;
 final class DBConfig
 {
 
-    private const DRIVER   = "mysql";
-    private const HOST     = "localhost";
-    private const DBNAME   = "t308";
-    private const USER     = "modifier";
-    private const PASSWORD = "modifier";
+    private readonly string $dsn;
+    private readonly string $user;
+    private readonly string $password;
 
-    public function getUser(): string
+    public function __construct(string $dsn, string $user, string $password)
     {
-        return self::USER;
-    }
-
-    public function getPassword(): string
-    {
-        return self::PASSWORD;
+        $this->dsn      = $dsn;
+        $this->user     = $user;
+        $this->password = $password;
     }
 
     public function getDSN(): string
     {
-        return sprintf(
-            "%s:host=%s;dbname=%s;port=%d;charset=%s",
-            self::DRIVER,
-            self::HOST,
-            self::DBNAME,
-            3306,
-            "utf8"
-        );
+        return $this->dsn;
+    }
+
+    public function getUser(): string
+    {
+        return $this->user;
+    }
+
+    public function getPassword(): string
+    {
+        return $this->password;
     }
 }
