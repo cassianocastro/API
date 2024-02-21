@@ -1,2 +1,5 @@
 vendor/
-src/.lib/der/*.chc
+
+src/.lib/database/mariadb/
+
+*.chc
