@@ -13,7 +13,7 @@ final class Connection
 
     private ?PDO $pdo;
 
-    private function __construct(DBConfig $config)
+    public function __construct(DBConfig $config)
     {
         self::init($config);
     }
