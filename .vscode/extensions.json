@@ -2,9 +2,8 @@
     "recommendations": [
         "bmewburn.vscode-intelephense-client",
         "EditorConfig.EditorConfig",
-        "HookyQR.beautify",
         "vscode-icons-team.vscode-icons",
-        "abusaidm.html-snippets"
+        "geyao.html-snippets",
     ],
     "unwantedRecommendations": [
 
