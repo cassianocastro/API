@@ -1,5 +1,5 @@
 vendor/
 
-src/.lib/database/mariadb/
+lib/database/mariadb/
 
 *.chc
