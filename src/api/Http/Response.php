@@ -14,9 +14,9 @@ final class Response
     private Status $status;
     private Document $document;
 
-    public function __construct(Status $status, Document $document)
+    public function __construct(int $code, Document $document)
     {
-        $this->status   = $status;
+        $this->status   = new Status($code);
         $this->document = $document;
     }
 
