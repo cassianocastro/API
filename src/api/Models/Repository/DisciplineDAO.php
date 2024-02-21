@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Api\Models\Tables;
+namespace Api\Models\Repository;
 
 use PDO;
 use Api\Models\Entities\Discipline;
