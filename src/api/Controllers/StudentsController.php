@@ -3,10 +3,11 @@ declare(strict_types=1);
 
 namespace Api\Controllers;
 
-use Api\Http\{ Request, Response, Status };
+use Api\Http\{ Request, Response };
 use Api\Models\Entities\Student;
-use Api\Models\Helpers\{ JSONParser, Connection };
-use Api\Models\Tables\StudentDAO;
+use Api\Models\Factories\ConnectionFactory;
+use Api\Models\Helpers\JSONParser;
+use Api\Models\Repository\StudentDAO;
 use Api\Views\JSONDocument;
 
 /**
@@ -17,7 +18,7 @@ final class StudentsController
 
 	public function getStudents(Request $request): Response
 	{
-        $connection = (new Connection());
+        $connection = (new ConnectionFactory())->create();
 		$result     = (new StudentDAO($connection))->getAll();
         $connection->__destruct();
 
@@ -27,14 +28,13 @@ final class StudentsController
         }
         $json = (new JSONParser())->encodeToJSON($result);
 
-        return new Response(new Status(200), new JSONDocument($json));
+        return new Response(200, new JSONDocument($json));
 	}
 
 	public function getStudentByID(Request $request): Response
 	{
-		$id = 0; // intval($data[1]);
-        $connection = (new Connection());
-		$result     = (new StudentDAO($connection))->findByID($id);
+        $connection = (new ConnectionFactory())->create();
+		$result     = (new StudentDAO($connection))->findByID(0);
         $connection->__destruct();
 
         if ( empty($result) )
@@ -43,7 +43,7 @@ final class StudentsController
         }
         $json = (new JSONParser())->encodeToJSON($result);
 
-        return new Response(new Status(200), new JSONDocument($json));
+        return new Response(200, new JSONDocument($json));
 	}
 
     public function post(Request $request): Response
@@ -52,7 +52,7 @@ final class StudentsController
 
         $json = (new JSONParser())->encodeToJSON("Register inserted.");
 
-        return new Response(new Status(201), new JSONDocument($json));
+        return new Response(201, new JSONDocument($json));
     }
 
     public function put(Request $request): Response
@@ -61,7 +61,7 @@ final class StudentsController
 
         $json = (new JSONParser())->encodeToJSON("Register updated.");
 
-        return new Response(new Status(200), new JSONDocument($json));
+        return new Response(200, new JSONDocument($json));
     }
 
     public function delete(Request $request): Response
@@ -70,6 +70,6 @@ final class StudentsController
 
         $json = (new JSONParser())->encodeToJSON("Register removed.");
 
-        return new Response(new Status(200), new JSONDocument($json));
+        return new Response(200, new JSONDocument($json));
     }
 }
