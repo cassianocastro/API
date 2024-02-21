@@ -15,6 +15,7 @@ final class JSONParser
         {
             return json_encode($value, JSON_PRETTY_PRINT);
         }
+
         return json_encode($value);
     }
 

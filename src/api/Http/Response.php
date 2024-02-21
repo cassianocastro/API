@@ -30,6 +30,7 @@ final class Response
                 $this->status->getCode()
             );
         }
+
         return $this->document->getContent();
     }
 }

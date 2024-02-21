@@ -13,5 +13,4 @@ final class Discipline extends Entity
     {
         parent::__construct($id);
     }
-
 }

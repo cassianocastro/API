@@ -38,9 +38,12 @@ final class Api
 
     public function receive(Request $request): void
     {
-        try {
+        try
+        {
             $this->router->dispatch($request);
-        } catch (RouteNotFoundException $e) {
+        }
+        catch ( RouteNotFoundException $e )
+        {
             (new ErrorController())->index($request);
         }
     }

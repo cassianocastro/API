@@ -25,6 +25,7 @@ final class Request
         {
             $path = rtrim($path, "/");
         }
+
         return $path;
     }
 }

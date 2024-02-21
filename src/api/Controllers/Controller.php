@@ -12,5 +12,4 @@ interface Controller
 {
 
     public function index(Request $request): Response;
-
 }
