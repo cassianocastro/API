@@ -17,10 +17,12 @@
     "files.associations": {
         "**/html/includes/*.inc": "html",
         "*.twig": "html",
-        "*.webmanifest": "json"
+        "*.webmanifest": "json",
+        "*.qry": "sql",
+        "*.db": "sql"
     },
 
-    "workbench.colorTheme": "Atom One Dark",
+    "workbench.colorTheme": "Default Dark+",
     "workbench.editor.decorations.colors": false,
     "workbench.colorCustomizations": {
         "editorLineNumber.foreground": "#c16266"
@@ -40,12 +42,12 @@
     },
     "[php]": {
         "editor.cursorStyle": "line",
-        "editor.cursorSmoothCaretAnimation": true,
+        "editor.cursorSmoothCaretAnimation": "on",
         "editor.cursorBlinking": "expand"
     },
     "[shellscript]": {
         "editor.cursorStyle": "block",
-        "editor.cursorSmoothCaretAnimation": false,
+        "editor.cursorSmoothCaretAnimation": "off",
         "editor.cursorBlinking": "smooth"
     }
 }
