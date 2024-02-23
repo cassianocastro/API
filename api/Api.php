@@ -44,7 +44,7 @@ final class Api
         }
         catch ( RouteNotFoundException $e )
         {
-            (new ErrorController())->index($request);
+            http_response_code(404);
         }
     }
 }
