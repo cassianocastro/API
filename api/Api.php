@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Api;
 
-use Api\Controllers\ErrorController;
 use Api\Http\Request;
 use Api\Routes\{ Router, RoutesMap, MapLoader, RouteNotFoundException };
 
