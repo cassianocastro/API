@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Api\Controllers;
+namespace Api\Services;
 
 use Api\Http\{ Request, Response };
 use Api\Models\Entities\Student;
