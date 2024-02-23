@@ -29,7 +29,7 @@ final class StudentsController
 
         $json = (new JSONParser())->encodeToJSON($result);
 
-        return new Response(200, new JSONDocument($json));
+        return new Response(200, $json);
 	}
 
 	public function getStudentByID(Request $request): Response
@@ -45,7 +45,7 @@ final class StudentsController
 
         $json = (new JSONParser())->encodeToJSON($result);
 
-        return new Response(200, new JSONDocument($json));
+        return new Response(200, $json);
 	}
 
     public function post(Request $request): Response
@@ -54,7 +54,7 @@ final class StudentsController
 
         $json = (new JSONParser())->encodeToJSON("Register inserted.");
 
-        return new Response(201, new JSONDocument($json));
+        return new Response(201, $json);
     }
 
     public function put(Request $request): Response
@@ -63,7 +63,7 @@ final class StudentsController
 
         $json = (new JSONParser())->encodeToJSON("Register updated.");
 
-        return new Response(200, new JSONDocument($json));
+        return new Response(200, $json);
     }
 
     public function delete(Request $request): Response
@@ -72,6 +72,6 @@ final class StudentsController
 
         $json = (new JSONParser())->encodeToJSON("Register removed.");
 
-        return new Response(200, new JSONDocument($json));
+        return new Response(200, $json);
     }
 }
