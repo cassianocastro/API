@@ -20,12 +20,12 @@
     ],
     "autoload": {
         "psr-4": {
-			"Api\\": "src/api/"
+			"Api\\": "api/"
         }
     },
 	"autoload-dev": {
         "psr-4": {
-			"Tests\\": "src/tests/"
+			"Tests\\": "tests/"
         }
     },
 	"config": {
