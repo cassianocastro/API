@@ -27,18 +27,6 @@ final class MapLoader
 
     public function load(): void
     {
-        $this->map->addRoute('/', Method::GET, function(Request $request) {
-            return (new HomeController())->index($request);
-        });
-
-        $this->map->addRoute('/info', Method::GET, function(Request $request) {
-            return (new InfoController())->index($request);
-        });
-
-        $this->map->addRoute('/login', Method::GET, function(Request $request) {
-            return (new LoginController())->index($request);
-        });
-
         $this->map->addRoute('/disciplines', Method::GET, function(Request $request) {
             (new DisciplinesController())->get($request);
         });
