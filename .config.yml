@@ -1,6 +1,6 @@
 ---
 dbconfig:
   dsn: "mysql:host=localhost;dbname=t308;port=3306;charset=utf8"
-  user: modifier
-  password: modifier
+  user: php
+  password: php
 ...
