@@ -12,7 +12,7 @@ use Api\Models\Repository\StudentDAO;
 /**
  *
  */
-final class StudentsController
+final class StudentsService
 {
 
 	public function getStudents(Request $request): Response

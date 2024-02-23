@@ -6,7 +6,7 @@ namespace Api\Controllers;
 /**
  *
  */
-final class DisciplinesController
+final class DisciplinesService
 {
 
     public function get(): void
