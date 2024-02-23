@@ -1,6 +1,6 @@
 {
-    "name": "students-api/students-api",
-    "description": "A simple example of Rest API",
+    "name": "cassianocastro/api.students.com",
+    "description": "A REST API",
     "type": "project",
     "license": "MIT",
 	"readme": "./README.md",
