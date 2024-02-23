@@ -9,7 +9,7 @@ use Api\Views\HTMLDocument;
 /**
  *
  */
-final class InfoController implements Controller
+final class InfoController
 {
 
     public function index(Request $request): Response

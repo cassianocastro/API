@@ -10,7 +10,7 @@ use Api\Views\JSONDocument;
 /**
  *
  */
-final class ErrorController implements Controller
+final class ErrorController
 {
 
     public function index(Request $request): Response
