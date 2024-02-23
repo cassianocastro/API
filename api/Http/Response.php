@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 namespace Api\Http;
 
-use Api\Views\{ Document, JSONDocument };
-
 /**
  *
  */
