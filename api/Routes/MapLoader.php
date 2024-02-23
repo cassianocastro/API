@@ -3,13 +3,7 @@ declare(strict_types=1);
 
 namespace Api\Routes;
 
-use Api\Controllers\{
-    StudentsController,
-    DisciplinesController,
-    HomeController,
-    InfoController,
-    LoginController
-};
+use Api\Controllers\{ StudentsController, DisciplinesController };
 use Api\Http\{ Request, Method };
 
 /**
