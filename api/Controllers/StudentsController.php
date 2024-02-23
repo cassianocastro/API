@@ -8,7 +8,6 @@ use Api\Models\Entities\Student;
 use Api\Models\Factories\ConnectionFactory;
 use Api\Models\Helpers\JSONParser;
 use Api\Models\Repository\StudentDAO;
-use Api\Views\JSONDocument;
 
 /**
  *
