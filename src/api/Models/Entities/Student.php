@@ -15,6 +15,7 @@ final class Student extends Entity
     public function __construct(string $name, int $age, int $id = 0)
     {
         parent::__construct($id);
+
         $this->name = $name;
         $this->age  = $age;
     }

@@ -22,14 +22,17 @@ final class Router
     {
         $path = $request->getPath();
 
-        try {
+        try
+        {
             if ( $callback = $this->map->contains($path) )
             {
                 $response = call_user_func($callback, $request);
 
                 Browser::render($response);
             }
-        } catch (RouteNotFoundException $e) {
+        }
+        catch ( RouteNotFoundException $e )
+        {
             throw $e;
         }
     }

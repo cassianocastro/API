@@ -33,18 +33,20 @@ final class RoutesMap
                 ["([0-9]*)", "([A-Za-z]*)", "\/", "\."],
                 $expression
             );
+
             return "/^$pattern$/i";
         }
 
-        foreach ($this->routes as $method => $routes)
+        foreach ( $this->routes as $method => $routes )
         {
-            foreach ($routes as $expression => $callback)
+            foreach ( $routes as $expression => $callback )
             {
                 $pattern = getPattern($expression);
 
                 if ( preg_match($pattern, $path) ) return $callback;
             }
         }
+
         throw new RouteNotFoundException();
     }
 }

@@ -21,6 +21,7 @@ final class HTMLDocument implements Document
     public function getContent(): string
     {
         ob_start();
+
         require_once $this->path;
 
 		$content = ob_get_contents();

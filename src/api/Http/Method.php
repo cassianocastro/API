@@ -16,5 +16,4 @@ enum Method: string
     case PUT     = "PUT";
     case DELETE  = "DELETE";
     case OPTIONS = "OPTIONS";
-
 }

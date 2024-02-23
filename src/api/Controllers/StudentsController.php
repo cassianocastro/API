@@ -26,6 +26,7 @@ final class StudentsController
         {
             $result = "No registers found.";
         }
+
         $json = (new JSONParser())->encodeToJSON($result);
 
         return new Response(200, new JSONDocument($json));
@@ -41,6 +42,7 @@ final class StudentsController
         {
             $result = "Student not found.";
         }
+
         $json = (new JSONParser())->encodeToJSON($result);
 
         return new Response(200, new JSONDocument($json));
