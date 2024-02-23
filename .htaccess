@@ -28,8 +28,8 @@ RewriteCond %{REQUEST_FILENAME} !(\.ico)
 # Push every request to index.php
 RewriteRule ^(.*)$ index.php [QSA]
 
-AuthType Basic
-AuthName "Restricted API"
-AuthBasicProvider file
-AuthUserFile "/etc/apache2/passwords"
-Require user test
+# AuthType Basic
+# AuthName "Restricted API"
+# AuthBasicProvider file
+# AuthUserFile "/etc/apache2/passwords"
+# Require user test
