@@ -12,9 +12,9 @@ final class Response
 {
 
     private Status $status;
-    private Document $document;
+    private string $document;
 
-    public function __construct(int $code, Document $document)
+    public function __construct(int $code, string $document)
     {
         $this->status   = new Status($code);
         $this->document = $document;
@@ -22,15 +22,12 @@ final class Response
 
     public function __toString(): string
     {
-        if ( $this->document instanceof JSONDocument )
-        {
-            header(
-                "Content-Type: application/json; charset=UTF-8",
-                false,
-                $this->status->getCode()
-            );
-        }
+        header(
+            "Content-Type: application/json; charset=UTF-8",
+            false,
+            $this->status->getCode()
+        );
 
-        return $this->document->getContent();
+        return $this->document;
     }
 }
