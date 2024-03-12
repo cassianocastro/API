@@ -88,4 +88,38 @@ function canSendCsvFileToClient(): void
     fclose($pointer);
 }
 
-//canSendCsvFileToClient();
+/**
+ * @test
+ */
+function canDoRequestWithContextOptions(): string
+{
+    $options = [
+        "http" => [
+            "method" => "GET",
+            "max_redirects" => "0",
+        ]
+    ];
+
+    $context = stream_context_create($options);
+    $result  = file_get_contents("http://www.api.students.com/students/2", false, $context);
+
+    return $result;
+}
+
+/**
+ * @test
+ */
+function canDoRequestWithCURL(): string
+{
+    $uri  = "http://www.api.students.com/students/1";
+    $curl = curl_init();
+
+    curl_setopt($curl, CURLOPT_URL, $uri);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+
+    $output = curl_exec($curl);
+
+    curl_close($curl);
+
+    return $output;
+}
